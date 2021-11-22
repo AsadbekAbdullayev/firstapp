@@ -35,22 +35,43 @@
 //     {   
 //         id : 1,
 //         name : 'Eshmat',
+//         username:'salomov',
 //         status : 'CS',
 //         department : 'IT'
 //     },
 //     {
 //         id : 2,
+//         username:'salomov',
 //         name : 'Gishmat',
 //         status : 'CS',
 //         department : 'AI'
 //     },
 //     {
 //         id : 3,
+//         username:'Assalomov',
 //         name : 'Ahmad',
 //         status : 'CS',
 //         department : 'IT'
+//     },
+//     {
+//         id : 4,
+//         username:'lomov',
+//         name : 'Ahmadjon',
+//         status : 'CS',
+//         department : 'IT'
 //     }
+
 // ] 
+
+// let search =(up)=>{
+//     for(i=0;i<user.length;i++){
+//         if((user[i].name.search(up)!==-1) || (user[i].username.search(up)!==-1)){
+//             console.log(user[i]);
+//         }
+//     }
+// }
+
+// search('ov')
 
 
 // let Oncreate =(obj)=>{
@@ -89,6 +110,50 @@
 // OnDelete('id',2)
 
 
+// let ar = [1,1,1,1,1,12,3,3,3,4,45,5,5];
+// var a ='';
+// var b=[];
+// for(i=0;i<ar.length;i++){
+//         if(a.search(ar[i])===-1){
+//             a.split('');
+//             b.push(ar[i]);
+
+//         }
+    
+//     a=b.join('')
+// }
+
+// console.log(b)
+
+// let a = 'AASWAASEEE';
+// let noRepaet = ()=>{
+//     let b ='';
+//     let c =[];
+//     let sort = a.split('').sort();
+//     for(i=0;i<a.length;i++){
+//         if(b.search(a[i]) === -1){     
+//         c.push(a[i]) 
+//         }
+//         b=c.join('')
+//     }
+// let bb = b.split('');
+// let w =0;
+// let ww =[];
+// for(j=0;j<bb.length;j++){
+//     for(q=0;q<sort.length;q++){
+//         if(bb[j]===sort[q]){
+//             w++;
+
+//         }
+//     }
+//     ww.push(w,b[j])
+    
+//     w=0;
+// }
+// console.log(ww.join(""))
+
+// }
+// noRepaet();
 
 
 
