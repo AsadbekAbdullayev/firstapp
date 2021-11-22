@@ -1,24 +1,38 @@
-class Test {
+// let a =['Acer',2021,2000];
+
+// const Nout = {
+//     name:'Acer',
+//     year:2021,
+//     price:200,
+
+//     narxi:()=>{
+//         console.log(this.price*10750)
+//     }
+
+// }
+// Nout.narxi()
+// console.log(a);
+
+function add(title){
+    console.log(title)
+}
+class Test1{
     constructor(title){
-        // console.log(title);
-        this.title = title;
+        console.log(title)
+        this.title=title
     }
-    getName(){
-        console.log(this.title,'testdan');
+    getname(){
+        console.log(this.title , 'test1dan')
     }
 }
-
+// // add('salom')
 // let user = new Test('salom');
-// user.getName();
-
-
-class Department extends Test{
+// user.getname()
+class Test2 extends Test1{
     constructor(tt){
-super(tt)
+        super(tt)
     }
 }
 
-const dep = new Department('sssssss');
-dep.getName();
-
-
+const t = new Test2('Assalomu Alaykum')
+t.getname()
