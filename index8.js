@@ -64,14 +64,15 @@
 // ] 
 
 // let search =(up)=>{
+//     if(up.length!==0){
 //     for(i=0;i<user.length;i++){
+        
 //         if((user[i].name.search(up)!==-1) || (user[i].username.search(up)!==-1)){
 //             console.log(user[i]);
-//         }
-//     }
+//         }}
+//     }else(console.log('Malumot kiriting'))
 // }
-
-// search('ov')
+// search('')
 
 
 // let Oncreate =(obj)=>{
@@ -171,36 +172,35 @@
 //     console.log(data);
 // })
 
-
-let users = {
-    id:1,
-    pw:'pp'
-}
-
-console.log('started...');
-
-const Facebook =(pw,id) =>{
-let user = new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-        if(users.id === id && users.pw === pw){
-            resolve("tugriii")
-        }else{
-            reject('notugggrriii')
-        }
-    },2000)
-})
-user.then((res)=>{console.log(res);
-    console.log('finished...');
-})
-.catch((err)=>{console.log(err)
-console.log('finished...');
-})
-
-}
-
-Facebook(1,'pp')
+// let users = {
+//     id:1,
+//     pw:'pp'
+// }
 
 
+// console.log('started...');
+
+
+// const Facebook =(pw,id) =>{
+// let user = new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//         if(users.id === id && users.pw === pw){
+//             resolve("tugriii")
+//         }else{
+//             reject('notugggrriii')
+//         }
+//     },2000)
+// })
+// user.then((res)=>{console.log(res);
+//     console.log('finished...');
+// })
+// .catch((err)=>{console.log(err)
+// console.log('finished...');
+// })
+
+// }
+
+// Facebook(1,'pp')
 
 
 
