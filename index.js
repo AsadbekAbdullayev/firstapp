@@ -158,17 +158,47 @@
 
 
 
+// console.log('started..');
+
+// let add=(a,b,c)=>{
+//     setTimeout(()=>{
+//         c('ishalaaaaddiiiii');
+// console.log('Finished..');
+
+//     },3000)
+// }
+// add('salom','dunyo',(data)=>{
+//     console.log(data);
+// })
 
 
+let users = {
+    id:1,
+    pw:'pp'
+}
 
+console.log('started...');
 
+const Facebook =(pw,id) =>{
+let user = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        if(users.id === id && users.pw === pw){
+            resolve("tugriii")
+        }else{
+            reject('notugggrriii')
+        }
+    },2000)
+})
+user.then((res)=>{console.log(res);
+    console.log('finished...');
+})
+.catch((err)=>{console.log(err)
+console.log('finished...');
+})
 
+}
 
-
-
-
-
-
+Facebook(1,'pp')
 
 
 
