@@ -192,3 +192,24 @@
 
 // obj(1)(2);
 // obj(1,2);
+
+// let ar =[1,3,2,2];
+// let sum=0;
+// let sum2=0;
+// for(i=0;i<ar.length;i++){
+//     let a = ar.slice(i,ar.length);
+//     for(j=1;j<a.length+1;j++){
+//         let b = a.slice(0,j)
+//         let sum = 0;
+//                 for(q=0;q<b.length;q++){
+//                     sum=sum+b[q]
+//                 }
+//                 let sum1 = sum/b.length;
+//                 if(sum1===2){
+//                     sum2++;
+//                 }
+//                 sum1=0   
+//     }
+// }
+// console.log(sum2);
+

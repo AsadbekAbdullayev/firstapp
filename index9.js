@@ -91,23 +91,114 @@
 
 // }
 // doesTriangleFit([1,2,3],[1,2,3])
-let ar =[1,3,2,2]
-let b=2
-let c=0;
-let w=0;
-for(i=0;i<ar.length;i++){
-    // for(i=1;i<=ar.length;i++){
-    //    let r= ar.slice(0,i)
-    //    console.log(r);
-    // //    for(j=0;j<r.length;j++){
-    // //        console.log(r);
-    // //        w=w+r[j]
-    // //    }
-    // //    if(w/i===b){
-    // //        c++
-    // //    }
-    // }
-    ar.splice(0,1)
-    console.log(ar);
-}
-// }666666666666666666666
+
+// let a = [2,2,5];
+
+// let sum1=sum/a.length;
+// console.log(sum1);
+
+
+
+// let getdata = (aa,bb)=>{
+//     let sum=0;
+//     let sum2=0;
+//     for(i=0;i<aa.length;i++){
+//         let a = aa.slice(i,ar.length);
+//         for(j=1;j<a.length+1;j++){
+//             let b = a.slice(0,j)
+//             let sum = 0;
+//                     for(q=0;q<b.length;q++){
+//                         sum=sum+b[q]
+//                     }
+//                     let sum1 = sum/b.length;
+//                     if(sum1===bb){
+//                         sum2++;
+//                     }
+//                     sum1=0   
+//         }
+//     }
+//     console.log(sum2);
+// }
+// getdata([1,3,2,2],2)
+
+// let tubson =(a)=>{
+//     let count=0;
+// for(i=2;i<a;i++){
+//     for(j=1;j<=i;j++){
+//         if(i % j ===0){
+//             count++; 
+//         }
+//     }
+//     if(count===2){
+//         console.log(i);
+//     }
+//     count=0;
+// }}
+
+// tubson(100);
+ 
+// let a = [
+//     {id:1,name:'asasd',status:'efdfsa',age:23},
+//     {id:2,name:'asasd',status:'efdfsa',age:27},
+//     {id:3,name:'asasd',status:'efdfsa',age:21}
+// ]
+
+// let ageSort =()=>{
+
+//     let b=[];
+// let c=[];
+// a.map((v)=>{
+//     b.push(v.age);
+//     b.sort((a,b)=>b-a)
+
+// })
+// b.map((v)=>{
+//   a.map((cc)=>{
+//     if(v===cc.age){
+//         c.push(cc)
+//     }
+//   })
+// })
+// console.log(c);
+
+// }
+
+
+
+
+
+// let CountA =()=>{
+//     let count=0;
+// a.map((value)=>{
+//     value.name.split('').map((value,index)=>{
+//         if(value==='a'){
+//             count++;
+//         }
+//     });
+//     value.status.split('').map((value,index)=>{
+//         if(value==='a'){
+//             count++;
+//         }
+//     });
+// })
+
+// console.log(count);
+// }
+let a = ['a','s','d','f'];
+let b = ['а','с','д','ф'];
+let c= 'aasaadd';
+let cc=[]
+c.split('').map((v)=>{
+    if(v==='a'){ 
+        cc.push('а')  
+    }if(v==='s'){ 
+        cc.push('с')  
+    }if(v==='d'){ 
+        cc.push('д')  
+    }if(v==='f'){
+        cc.push(ф)
+    }
+})
+
+aa=cc.join('')
+console.log(aa);
