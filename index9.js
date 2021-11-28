@@ -14,7 +14,7 @@
 //         name:'Olim',
 //         status:'grant'
 //     },
-    
+
 // ]
 // let search=(up)=>{
 //     if(up.length!==0){
@@ -136,7 +136,10 @@
 // }}
 
 // tubson(100);
- 
+
+// ===========================================
+
+
 // let a = [
 //     {id:1,name:'asasd',status:'efdfsa',age:23},
 //     {id:2,name:'asasd',status:'efdfsa',age:27},
@@ -184,21 +187,141 @@
 
 // console.log(count);
 // }
-let a = ['a','s','d','f'];
-let b = ['а','с','д','ф'];
-let c= 'aasaadd';
-let cc=[]
-c.split('').map((v)=>{
-    if(v==='a'){ 
-        cc.push('а')  
-    }if(v==='s'){ 
-        cc.push('с')  
-    }if(v==='d'){ 
-        cc.push('д')  
-    }if(v==='f'){
-        cc.push(ф)
-    }
-})
 
-aa=cc.join('')
-console.log(aa);
+// let a = ['a','s','d','f'];
+// let b = ['а','с','д','ф'];
+// let c= 'aasaadd';
+// let cc=[]
+// c.split('').map((v)=>{
+//     if(v==='a'){ 
+//         cc.push('а')  
+//     }if(v==='s'){ 
+//         cc.push('с')  
+//     }if(v==='d'){ 
+//         cc.push('д')  
+//     }if(v==='f'){
+//         cc.push(ф)
+//     }
+// })
+
+// aa=cc.join('')
+// console.log(aa);
+
+// ===========================================
+
+
+// let a = ['a','c','a','d','v','c'];
+// let b = [];
+// let c = [];
+// a.map((v)=>{
+//     if(b.includes(v)){
+//         c.push(v)
+//     }
+//     b.push(v)
+// })
+// console.log(c[0]);
+
+
+// ===========================================
+
+
+// let a = 'AASSDDD'
+// let b = [];
+// let c = [];
+// let count=0;
+// a.split('').map((v)=>{
+//     if(!b.includes(v)){
+//         b.push(v)
+//     }
+// })
+// b.map((v)=>{
+//     a.split('').map((s)=>{
+//         if(s===v){
+//             count++
+//         }
+//     })
+//     c.push(`${count}${v}`)
+//     console.log(count,'ta',v);
+//     count=0;
+// })
+// console.log(c.join(''));
+
+// ===========================================
+
+// let a = '2A2S3D';
+// let b = [];
+// a.split('').map((v,i)=>{
+//     if(Number(v)){
+//         for(j=0;j<v;j++){
+//             b.push(a[i+1])
+//         }
+
+//     }
+// })
+// console.log(b.join(''));
+
+// ===========================================
+
+
+// const user = [
+//     {
+//         id: 1,
+//         name: 'Asadbek',
+//         status: 'grant'
+//     },
+
+//     {
+//         id: 2,
+//         name: 'Xolmirza',
+//         status: 'kantract'
+//     }, 
+//     {
+//         id: 3,
+//         name: 'Azamat',
+//         status: 'kontrakt'
+//     },
+//     {
+//         id: 4,
+//         name: 'Olim',
+//         status: 'grant'
+//     }
+
+// ]
+
+// let getdata = (a, b) => {
+//     let a1 = [];
+//     let a2 = [];
+//     let a3 = [];
+//     user.map((v)=>{
+//         if(v[b].toLowerCase().includes(a)){
+//             a1.push(v)
+//         }
+        
+//     })
+//     a1.map((v)=>{
+//         a2.push(v.name)
+//     })
+//     a2.sort();
+//     a2.map((v)=>{
+//         user.map((q)=>{
+//             if(q[b].toLowerCase()===v.toLowerCase()){
+//                 a3.push(q)
+//             }
+//         })
+//     })
+//     console.log(a3);
+// }
+// getdata('o','name')
+
+
+
+                   
+
+
+
+
+
+
+
+
+
