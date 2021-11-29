@@ -314,8 +314,31 @@
 // getdata('o','name')
 
 
+// zeroesToEnd([1, 2, 0, 0, 4, 0, 5]) ➞ [1, 2, 4, 5, 0, 0, 0]
 
-                   
+// zeroesToEnd([0, 0, 2, 0, 5]) ➞ [2, 5, 0, 0, 0]
+
+// zeroesToEnd([4, 4, 5]) ➞ [4, 4, 5]
+
+// zeroesToEnd([0, 0]) ➞ [0, 0]
+
+// let zeroesToEnd = (a)=>{
+//     let b = []
+//     a.map((v)=>{
+//         if(v!==0){
+//             b.push(v);
+//             b.sort((a,b)=>a-b)
+//         }
+//     })
+//     a.map((v)=>{
+//         if(v===0){
+//             b.push(v);
+//         }
+//     })
+//     console.log(b);
+// }
+
+// zeroesToEnd([0, 0, 2, 0, 5])
 
 
 
