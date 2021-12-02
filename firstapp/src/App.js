@@ -1,20 +1,22 @@
-import react from 'react';
-import Farzanaaa, { Farzand } from './Farzand';
-import './farzand.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-<Farzanaaa/>
-<Farzand/>
-       
 
-      </header>
-    </div>
-  );
+
+class App extends React.Component{
+  render(){
+    console.log(this)
+    return(
+      <div>
+        {this.props.children}
+        <h1>HELLO REACT {this.props.name} </h1>
+        <h1>HELLO REACT {this.props.id} </h1>
+      </div>
+    )
+  }
 }
 
 
 
 export default App;
+
+
