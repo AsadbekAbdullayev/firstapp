@@ -6,10 +6,7 @@ import './index.css'
 
 ReactDOM.render(
 <React.StrictMode>
-  <App name="Salom men Propsman" id='1-raqamli'/>
-  <App>
-    <h2>Asadbek</h2>
-  </App>
+  <App/>
 </React.StrictMode>
 ,
   document.getElementById('root')

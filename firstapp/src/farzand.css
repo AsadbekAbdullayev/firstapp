@@ -1,7 +1,7 @@
-body{
-    background-color: rgb(11, 139, 118);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
+.card{
+	width: 200px;
+	height: 200px;
+	background-color: #a1a1a1;
+	margin: 10px;
+}

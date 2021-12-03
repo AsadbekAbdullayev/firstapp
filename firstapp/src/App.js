@@ -1,4 +1,6 @@
 import React from 'react';
+import './App.css'
+import Student from './Farzand'
 
 
 
@@ -6,11 +8,10 @@ class App extends React.Component{
   render(){
     console.log(this)
     return(
-      <div>
-        {this.props.children}
-        <h1>HELLO REACT {this.props.name} </h1>
-        <h1>HELLO REACT {this.props.id} </h1>
-      </div>
+    	<div className='container'>
+    	<Student/>
+    	</div>
+    	
     )
   }
 }
