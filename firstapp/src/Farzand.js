@@ -1,6 +1,6 @@
 import React from 'react';
 import Con from './Container'
-import './App.css'
+import './farzand.css'
 
 
 class Student extends React.Component{

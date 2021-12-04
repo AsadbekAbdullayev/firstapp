@@ -8,8 +8,14 @@ class App extends React.Component{
   render(){
     console.log(this)
     return(
+		
     	<div className='container'>
-    	<Student/>
+    	<Student logo='airbnb' text='lorem ipus doler me as alos dkmvkddsalefvjv rem ipus doler '/>
+    	<Student logo='airbnb' text='lorem ipus doler me as alos dkmvkddsalefvjv rem ipus doler '/>
+    	<Student logo='airbnb' text='lorem ipus doler me as alos dkmvkddsalefvjv rem ipus doler '/>
+    	<Student logo='airbnb' text='lorem ipus doler me as alos dkmvkddsalefvjv rem ipus doler '/>
+    	<Student logo='airbnb' text='lorem ipus doler me as alos dkmvkddsalefvjv rem ipus doler '/>
+    	<Student logo='airbnb' text='lorem ipus doler me as alos dkmvkddsalefvjv rem ipus doler '/>
     	</div>
     	
     )
