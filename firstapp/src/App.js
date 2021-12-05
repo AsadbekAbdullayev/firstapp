@@ -1,25 +1,16 @@
 import React from 'react';
 import './App.css'
-import Student from './Farzand'
-
-
+import Student from "./Student";
 
 class App extends React.Component{
-  render(){
-    console.log(this)
-    return(
+	render(){
+		return(
+			<div>
+			<Student/>
 		
-    	<div className='container'>
-    	<Student logo='airbnb' text='lorem ipus doler me as alos dkmvkddsalefvjv rem ipus doler '/>
-    	<Student logo='airbnb' text='lorem ipus doler me as alos dkmvkddsalefvjv rem ipus doler '/>
-    	<Student logo='airbnb' text='lorem ipus doler me as alos dkmvkddsalefvjv rem ipus doler '/>
-    	<Student logo='airbnb' text='lorem ipus doler me as alos dkmvkddsalefvjv rem ipus doler '/>
-    	<Student logo='airbnb' text='lorem ipus doler me as alos dkmvkddsalefvjv rem ipus doler '/>
-    	<Student logo='airbnb' text='lorem ipus doler me as alos dkmvkddsalefvjv rem ipus doler '/>
-    	</div>
-    	
-    )
-  }
+			</div>
+		)
+	}
 }
 
 
