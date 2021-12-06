@@ -1,1 +1,16 @@
+.on1{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(241, 238, 11);
 
+}
+.card{
+    display: flex;
+}
+.btn{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(182, 69, 167);
+    border: none;
+    border-radius: 20px;margin: 20px;
+}
