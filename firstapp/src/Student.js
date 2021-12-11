@@ -6,90 +6,112 @@ class Student extends React.Component{
     constructor(props){
         super(props)
         this.state={
+            active:null,
             count:0,
             name:'',
-            lastname:'',
-            btn:'',
-            edit:true,
-             deta : [
-        { id:1, name:'Asadbek',age:21,addres:'Shahrisabz',nickname:'Bek',univ:'TDTU',job:'Programmer'},
-        { id:2, name:'Asadbek',age:21,addres:'Shahrisabz',nickname:'Bek',univ:'TDTU',job:'Programmer'},
-        { id:3, name:'Asadbek',age:21,addres:'Shahrisabz',nickname:'Bek',univ:'TDTU',job:'Programmer'},
-        { id:4, name:'Asadbek',age:21,addres:'Shahrisabz',nickname:'Bek',univ:'TDTU',job:'Programmer'},
-        { id:5, name:'Asadbek',age:21,addres:'Shahrisabz',nickname:'Bek',univ:'TDTU',job:'Programmer'},
-        { id:6, name:'Asadbek',age:21,addres:'Shahrisabz',nickname:'Bek',univ:'TDTU',job:'Programmer'},
-        { id:7, name:'Asadbek',age:21,addres:'Shahrisabz',nickname:'Bek',univ:'TDTU',job:'Programmer'},
-        { id:8, name:'Asadbek',age:21,addres:'Shahrisabz',nickname:'Bek',univ:'TDTU',job:'Programmer'},
-        { id:9, name:'Asadbek',age:21,addres:'Shahrisabz',nickname:'Bek',univ:'TDTU',job:'Programmer'}
+            age:'',
+            job:'',
+             data : [
+
+        { id:1, name:'Asadbek',age:21,job:'Programmer'},
+        { id:2, name:'Asadbek',age:21,job:'Programmer'},
+        { id:3, name:'Asadbek',age:21,job:'Programmer'}
         
     ]
         }
     }
     render(){
-        // let on =(e)=>{
-        //  this.setState({
-        //      name:e.target.value
-        //  })
+   const onEdit =(e)=>{
+       this.setState({active:e})
+   }
 
-        // }
+   const cancel =()=>{
+    this.setState({active:null})
+}
+const onDelete =(e)=>{
+    this.setState({data:this.state.data.filter((v)=> v.id!==e)
+    })
+}
+const onchange=(e)=>{
+    this.setState({[e.target.name]:e.target.value})
 
-        // let on2 =(e)=>{
-        //     const ND = {
-        //         id:this.state.deta.length + 1,
-        //         name:this.state.name
-        //     }
-        //  this.setState({
-        //        deta:[
-        //            ...this.state.deta,
-        //            ND
-        //        ]
-        //  })
+}
+const onAdd =()=>{
+    const nd ={
+        id:this.state.data.length + 1,
+        name:this.state.name,
+        age:this.state.age,
+        job:this.state.job
+    }
 
-        // }
+    this.setState({
+        data:[
+            ...this.state.data,
+            nd
+        ],
+    })
+    
+}
+    
+const onSave =(v)=>{
+    const news={
+        id:v.id,
+        name:this.state.name,
+        job:this.state.job,
+        age:this.state.age
+    }
+    
+    this.setState({
+        data:[...this.state.data.filter((e)=>e.id!==v.id),news],
+        active:null,
+        name:'',
+        age:'',
+        job:'',
+    })
+}
 
-        let on1 =(e)=>{
-            const res = this.state.deta.filter((v)=> v.id!==e )
-            this.setState({
-               deta:res
-            })
-        }
-
-       
-        
-
-        return(
+        return( 
             <div>
-                {/* <div>
-           <input type='text' name='name' className='inp' onChange={on}/> <button onClick={on2} >Add </button>
-                </div> */}
+                
+                    <div  className='card1' >
+                     
+
+                    <tr>
+
+    <th> <input type='text' placeholder='name' name='name' className='inp' onChange={onchange} /></th>
+    <th><input type='text' name='age' placeholder='age' className='inp'onChange={onchange} /></th>
+    <th><input type='text' name='job' placeholder='job' className='inp'onChange={onchange} /></th>
+    <th><button  className='btna'  onClick={onAdd}>Add </button></th>
+  </tr>
+
+                    </div>          
+
+                <div  className='card' >
+
+
 
                 <table className='custom'>
                   <tr>
     <th>ID</th>
     <th>NAME</th>
     <th>AGE</th>
-    <th>ADDRES</th>
-    <th>NICKNAME</th>
-    <th>UNIV</th>
     <th>JOB</th>
     <th>DELETE</th>
     <th>EDIT</th>
   </tr>
   
                 {
-                    this.state.deta.map((v)=>{
+                    this.state.data.map((v)=>{
                         return(
                             
                                 <tr className='tr'>
-    <td>{v.id}</td>
-    <td>{v.name}</td>
-    <td>{v.age}</td>
-    <td>{v.addres}</td>
-    <td>{v.nickname}</td>
-    <td>{v.univ}</td>
-    <td>{v.job}</td>
-    <td><button onClick={()=>on1(v.id)} className='btnd'>DELETE</button></td>
-    <td><button className='btn'  >EDIT</button></td> 
+    <td>{v.id} </td>
+
+    <td>{ this.state.active===v.id ?  <input type='text' placeholder='name' name='name' className='inp'  onChange={onchange}  />: `${v.name}` }</td>
+    <td>{ this.state.active===v.id ?  <input type='text' placeholder='age' name='age' className='inp'onChange={onchange}  />: `${v.age}` }</td>
+    <td> { this.state.active===v.id ?  <input type='text' placeholder='job' name='job' className='inp'onChange={onchange} />: `${v.job}` }</td>
+    <td><button  onClick={()=>onDelete(v.id)} className='btnd'>DELETE</button></td>
+    <td>{this.state.active===v.id ? <> <button onClick={()=>onSave(v)} className='btn'>SAVE</button> <button className='btn' onClick={cancel}  >Cancel</button></>:<button className='btn' onClick={()=>onEdit(v.id)} >EDIT</button> }</td> 
    
   </tr>
 
@@ -100,7 +122,7 @@ class Student extends React.Component{
                     })
                 }
                 </table>
-
+                </div>
             </div>
         )
     }

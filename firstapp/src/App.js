@@ -5,7 +5,7 @@ import Student from './Student';
 class App extends React.Component{
   render(){
     return(
-      <div className='card'>
+      <div>
         
         <Student/>
       </div>
