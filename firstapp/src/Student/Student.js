@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import './Student.css'
 
 
 class Student extends React.Component{
@@ -22,7 +22,11 @@ class Student extends React.Component{
     }
     render(){
    const onEdit =(e)=>{
-       this.setState({active:e})
+       this.setState({
+        name:'',
+        age:'',
+        job:'',
+        active:e})
    }
 
    const cancel =()=>{
@@ -34,6 +38,12 @@ const onDelete =(e)=>{
 }
 const onchange=(e)=>{
     this.setState({[e.target.name]:e.target.value})
+
+}
+const onchange1=(e)=>{
+
+    this.setState( {
+        [e.target.name]:e.target.value})
 
 }
 const onAdd =()=>{
@@ -49,6 +59,10 @@ const onAdd =()=>{
             ...this.state.data,
             nd
         ],
+        // name:'',
+        // age:'',
+        // job:'',
+      
     })
     
 }
@@ -60,13 +74,12 @@ const onSave =(v)=>{
         job:this.state.job,
         age:this.state.age
     }
-    
+    const c = [...this.state.data.filter((e)=>e.id!==v.id),news]
+    c.sort((a,s)=>a.id-s.id)
     this.setState({
-        data:[...this.state.data.filter((e)=>e.id!==v.id),news],
+        data:c,
         active:null,
-        name:'',
-        age:'',
-        job:'',
+      
     })
 }
 
@@ -78,8 +91,8 @@ const onSave =(v)=>{
 
                     <tr>
 
-    <th> <input type='text' placeholder='name' name='name' className='inp' onChange={onchange} /></th>
-    <th><input type='text' name='age' placeholder='age' className='inp'onChange={onchange} /></th>
+    <th> <input type='text' placeholder='name' name='name' className='inp'    onChange={onchange} /></th>
+    <th><input type='text' name='age' placeholder='age' className='inp'onChange={onchange}  /></th>
     <th><input type='text' name='job' placeholder='job' className='inp'onChange={onchange} /></th>
     <th><button  className='btna'  onClick={onAdd}>Add </button></th>
   </tr>
@@ -107,9 +120,9 @@ const onSave =(v)=>{
                                 <tr className='tr'>
     <td>{v.id} </td>
 
-    <td>{ this.state.active===v.id ?  <input type='text' placeholder='name' name='name' className='inp'  onChange={onchange}  />: `${v.name}` }</td>
-    <td>{ this.state.active===v.id ?  <input type='text' placeholder='age' name='age' className='inp'onChange={onchange}  />: `${v.age}` }</td>
-    <td> { this.state.active===v.id ?  <input type='text' placeholder='job' name='job' className='inp'onChange={onchange} />: `${v.job}` }</td>
+    <td>{ this.state.active===v.id ?  <input type='text' placeholder='name' name='name' value={this.state.name} className='inp'  onChange={onchange1}  />: `${v.name}` }</td>
+    <td>{ this.state.active===v.id ?  <input type='text' placeholder='age' name='age' className='inp'onChange={onchange1}  />: `${v.age}` }</td>
+    <td> { this.state.active===v.id ?  <input type='text' placeholder='job' name='job' className='inp'onChange={onchange1} />: `${v.job}` }</td>
     <td><button  onClick={()=>onDelete(v.id)} className='btnd'>DELETE</button></td>
     <td>{this.state.active===v.id ? <> <button onClick={()=>onSave(v)} className='btn'>SAVE</button> <button className='btn' onClick={cancel}  >Cancel</button></>:<button className='btn' onClick={()=>onEdit(v.id)} >EDIT</button> }</td> 
    
