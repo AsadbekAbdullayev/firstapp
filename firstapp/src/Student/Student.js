@@ -93,7 +93,7 @@ const onSave =(v)=>{
 
     <th> <input type='text' placeholder='name' name='name' className='inp'    onChange={onchange} /></th>
     <th><input type='text' name='age' placeholder='age' className='inp'onChange={onchange}  /></th>
- +   <th><input type='text' name='job' placeholder='job' className='inp'onChange={onchange} /></th>
+    <th><input type='text' name='job' placeholder='job' className='inp'onChange={onchange} /></th>
     <th><button  className='btna'  onClick={onAdd}>Add </button></th>
   </tr>
 
