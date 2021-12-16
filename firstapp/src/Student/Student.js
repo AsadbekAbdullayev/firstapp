@@ -7,15 +7,21 @@ class Student extends React.Component{
         super(props)
         this.state={
             active:null,
+            selected :true,
+            search:'',
+            searchname:'name',
             count:0,
             name:'',
             age:'',
             job:'',
+            newdata:[],
              data : [
 
         { id:1, name:'Asadbek',age:21,job:'Programmer'},
-        { id:2, name:'Asadbek',age:21,job:'Programmer'},
-        { id:3, name:'Asadbek',age:21,job:'Programmer'}
+        { id:2, name:'Bobur',age:31,job:'worker'},
+        { id:3, name:'Sardor',age:27,job:'Senior developer'},
+        { id:4, name:'Jamshid',age:35,job:'Middle developer'},
+        { id:5, name:'Asqar',age:45,job:'Junior developer'},
         
     ]
         }
@@ -26,7 +32,9 @@ class Student extends React.Component{
         name:'',
         age:'',
         job:'',
-        active:e})
+        active:
+            e.id
+        })
    }
 
    const cancel =()=>{
@@ -37,6 +45,7 @@ const onDelete =(e)=>{
     })
 }
 const onchange=(e)=>{
+
     this.setState({[e.target.name]:e.target.value})
 
 }
@@ -82,6 +91,35 @@ const onSave =(v)=>{
       
     })
 }
+// Search =================================================================================
+const onSearch =()=>{
+    
+  let nd = this.state.data.filter((v)=>v[this.state.searchname].toString().toLowerCase().includes(this.state.search))
+  this.setState({
+      newdata:nd,
+      selected:false
+  })
+console.log(this.state.newdata);
+    
+
+}
+const onk = (e)=>{
+
+    this.setState({searchname:e.target.value})
+
+    console.log(this.state.searchname);
+
+
+}
+const onsell = (e)=>{
+
+    this.setState({
+        search:e.target.value
+    })
+
+
+}
+
 
         return( 
             <div>
@@ -95,9 +133,27 @@ const onSave =(v)=>{
     <th><input type='text' name='age' placeholder='age' className='inp'onChange={onchange}  /></th>
     <th><input type='text' name='job' placeholder='job' className='inp'onChange={onchange} /></th>
     <th><button  className='btna'  onClick={onAdd}>Add </button></th>
+
   </tr>
 
                     </div>          
+                    <div  className='card1' >
+                     
+
+                     <tr>
+                     <select onChange={onk} className="cars">
+  <option value='' >...</option>
+  <option value="name" >name</option>
+  <option value="age" >age</option>
+  <option value="job" >job</option>
+
+</select>
+
+     <th> <input type='text' placeholder='name' name='name' className='inp'    onChange={onsell} /></th>
+     <th>{this.state.selected ? <button  className='btna'  onClick={onSearch}>Search </button> :<> <button  className='btna'  onClick={onSearch}>Search </button>  <button  className='btnd'  onClick={()=>this.setState({selected:true})}>Censel </button></>}</th>
+   </tr>
+ 
+                     </div>   
 
                 <div  className='card' >
 
@@ -114,7 +170,24 @@ const onSave =(v)=>{
   </tr>
   
                 {
-                    this.state.data.map((v)=>{
+                 this.state.selected ? this.state.data.map((v)=>{
+                        return(
+                            
+                                <tr className='tr'>
+    <td>{v.id} </td>
+
+    <td>{ this.state.active===v.id ?  <input type='text' placeholder='name' name='name' value={this.state.name} className='inp'  onChange={onchange1}  />: `${v.name}` }</td>
+    <td>{ this.state.active===v.id ?  <input type='text' placeholder='age' name='age' className='inp'onChange={onchange1}  />: `${v.age}` }</td>
+    <td> { this.state.active===v.id ?  <input type='text' placeholder='job' name='job' className='inp'onChange={onchange1} />: `${v.job}` }</td>
+    <td><button  onClick={()=>onDelete(v.id)} className='btnd'>DELETE</button></td>
+    <td>{this.state.active===v.id ? <> <button onClick={()=>onSave(v)} className='btn'>SAVE</button> <button className='btn' onClick={cancel}  >Cancel</button></>:<button className='btn' onClick={()=>onEdit(v)} >EDIT</button> }</td> 
+   
+  </tr>
+      )
+                    }):
+
+
+                    this.state.newdata.map((v)=>{
                         return(
                             
                                 <tr className='tr'>

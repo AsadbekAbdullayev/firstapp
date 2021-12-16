@@ -21,7 +21,7 @@ class App extends React.Component{
         <button className='bt' onClick={on}>{this.state.sel ? "Login" : 'Crud'}</button>
 
         {
-          this.state.sel ? <Student/> :<Login/>          
+          this.state.sel ? <Login/> :   <Student/>       
         }
        
       </div>
