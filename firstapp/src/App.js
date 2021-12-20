@@ -1,18 +1,14 @@
 import React from 'react';
-import {Box} from './Styled/Styled'
 import './App.css'
+import Furnite from './Furnite/index'
 
 
 class App extends React.Component{
 
   render(){
 return( 
-<div style={{display:'flex'}}>
-  <Box type='large'/>
-  <Box type='medium'/>
-  <Box type='small'/>
- 
- </div>)
+<Furnite/>
+)
   }
 }
 
