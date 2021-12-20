@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import Body from './Components/Body/index'
-
-
-export default class Furnite  extends Component {
+import { Body1 } from './styles'
+export default class Body extends Component {
     render() {
         return (
             <div>
-                <Body/>
+            <Body1/>
             </div>
         )
     }
 }
+

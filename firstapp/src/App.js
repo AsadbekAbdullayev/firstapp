@@ -3,13 +3,13 @@ import './App.css'
 import Furnite from './Furnite/index'
 
 
-class App extends React.Component{
+class App extends React.Component {
 
-  render(){
-return( 
+    render() {
+        return ( 
 <Furnite/>
-)
-  }
+        )
+    }
 }
 
 export default App;
